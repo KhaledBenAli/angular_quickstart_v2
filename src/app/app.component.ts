@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-import {Hike} from './hike/hike';
-import { HikeService } from './hike/hike.service';
-
 @Component({
   moduleId: module.id,
   selector: 'my-app',
@@ -10,20 +7,9 @@ import { HikeService } from './hike/hike.service';
 })
 
 export class AppComponent  {
-  hikes: Hike[];
+  
 
-  constructor(private _hikeService: HikeService) {    
+  constructor() {    
   }
 
-  ngOnInit() {
-    this._hikeService.getHikesFromAPI()
-                     .subscribe( 
-                        (res) => {
-                        this.hikes= res;
-                        }, 
-                        (error) => {
-                          console.error(error.status);
-                        }
-                    );
-  }
 }
