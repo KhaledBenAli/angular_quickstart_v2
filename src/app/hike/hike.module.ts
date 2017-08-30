@@ -3,10 +3,12 @@ import {CommonModule} from '@angular/common';
 
 import {HikeService} from './hike.service';
 import {HikeListComponent} from './hike-list.component';
+import {HikeDetailsComponent} from './hike-details.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
-    imports: [CommonModule],
-    declarations: [HikeListComponent],
+    imports: [CommonModule, RouterModule],
+    declarations: [HikeListComponent, HikeDetailsComponent],
     exports: [HikeListComponent],
     providers: [HikeService]
 })

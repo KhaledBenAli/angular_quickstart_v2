@@ -1,7 +1,7 @@
 <h1>List de randos</h1>
 
 <div *ngFor="let hike of hikes">
-        {{hike.name}} - {{hike.description}}
+        <a [routerLink]="['/hikes', hike.id]">{{hike.name}}</a> - {{hike.description}}
         <br>
         <br>    
 </div>
