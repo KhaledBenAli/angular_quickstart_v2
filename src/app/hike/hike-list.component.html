@@ -1,7 +1,11 @@
 <h1>List de randos</h1>
 
-<div *ngFor="let hike of hikes">
-        <a [routerLink]="['/hikes', hike.id]">{{hike.name}}</a> - {{hike.description}}
+<div>
+         Filtrer par: <input type="text" [(ngModel)]="searchTerm" placeholder="mots cles..."/>
+</div>
+
+<div *ngFor="let hike of hikes | hikeFilter:searchTerm">
+        <a [routerLink]="['/hikes', hike.id]">{{hike.name | uppercase}}</a> - {{hike.description}}
         <br>
         <br>    
 </div>
