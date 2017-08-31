@@ -2,4 +2,35 @@
 
 <div>Site pour la rando.</div>
 
+<button (click)="doToggle()" *ngIf='!open' class="btn btn-primary">ouvrir</button>
+<button (click)="doToggle()" *ngIf='open' class="btn btn-danger">fermer</button>
+<div [@toggleElement]="toggle">
+    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. 
+    You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. 
+    We swallow it too fast, we choke. We get some in our lungs, we drown. 
+    However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+</div>
+
 <hr>
+
+<div class="row">
+    <h3>Citations</h3>
+    <div class="frame col-md-6">
+        <div  class="citation" [@animateCitation]='animateCitation' 
+                                (@animateCitation.start)="log($event)"
+                                (@animateCitation.done)="log($event)"
+        >
+                {{quote.text}}
+                <br>
+                <em>{{quote.author}}</em>                    
+        </div>        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-primary" (click)="getPreviousQuote()">Precedente</button>
+        <button class="btn btn-primary" (click)="getNextQuote()">Suivante</button>
+    </div>
+</div>
+
