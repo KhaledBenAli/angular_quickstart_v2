@@ -28,4 +28,8 @@ export class HikeListComponent {
                         );
       }
 
+      addToMyTodoHike(hike: Hike) {
+          console.log(hike.name + " To Add");
+      }
+
 }

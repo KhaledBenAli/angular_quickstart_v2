@@ -5,7 +5,5 @@
 </div>
 
 <div *ngFor="let hike of hikes | hikeFilter:searchTerm">
-        <a [routerLink]="['/hikes', hike.id]">{{hike.name | uppercase}}</a> - {{hike.description}}
-        <br>
-        <br>    
+        <hike-summary [hike]="hike" (addHikeAsFav)="addToMyTodoHike($event)" ></hike-summary>
 </div>
